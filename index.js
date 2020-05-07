@@ -17,7 +17,8 @@ console.log(fifaData);
 
 function getFinals(/* code here */) {
 
-    /* code here */
+    const finalsArr = data.filter(obj => obj.Stage === "Final")
+    return finalsArr
 
 };
 
@@ -25,7 +26,8 @@ function getFinals(/* code here */) {
 
 function getYears(/* code here */) {
 
-    /* code here */
+    const finalYears = years.map(obj => obj.Year)
+    return finalYears
 
 };
 
@@ -35,7 +37,10 @@ getYears();
 
 function getWinners(/* code here */) {
 
-    /* code here */
+    const winnersArr = winners.map(obj => {
+        return `The winner is YOU`
+    })
+    return winnersArr
 
 };
 
@@ -59,9 +64,17 @@ getWinnersByYear();
 Hint: Investigate your data to find "team initials"!
 Hint: use `.reduce` */
 
-function getCountryWins(/* code here */) {
+function getCountryWins(data, teamInitials) {
 
-    /* code here */
+    const populationTotal = [];
+    populationTotal.push(fifaData.reduce(
+    function (sum, current) {return sum + current.population},0));
+
+
+console.log(populationTotal);
+
+
+
 
 };
 
